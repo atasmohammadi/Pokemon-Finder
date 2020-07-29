@@ -1,47 +1,50 @@
-import {
-  StyleSheet,
-} from 'react-native';
-
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
+import {StatusBar, StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
+  container: {
+    flex: 1,
+    marginTop: StatusBar.currentHeight || 0,
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
+  item: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: '#fff',
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+    elevation: 3,
+    borderRadius: 5,
   },
-  body: {
-    backgroundColor: Colors.white,
+  row: {
+    flexDirection: 'row',
   },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  title: {
+    fontSize: 14,
+    fontWeight: 'bold',
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
+  desc: {
+    fontSize: 14,
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
+  imageContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  highlight: {
-    fontWeight: '700',
+  descriptionContainer: {
+    flex: 1,
+    marginRight: 25,
+    paddingLeft: 20,
+    justifyContent: 'space-between',
   },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
+  itemImage: {
+    width: 100,
+    height: 100,
   },
 });
 

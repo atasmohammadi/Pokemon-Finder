@@ -1,23 +1,18 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
-import { baseUrl } from '../../constants';
+import {call, put, takeLatest} from 'redux-saga/effects';
+import {baseUrl} from '../../constants';
 import request from '../../utils/request';
 import objectToParams from '../../utils/objectToParams';
 
-import {
-  LOAD_POKEMONS,
-} from './constants';
+import {LOAD_POKEMONS} from './constants';
 
-import {
-  loadPokemonsFailed,
-  loadPokemonsSuccess,
-} from './actions';
+import {loadPokemonsFailed, loadPokemonsSuccess} from './actions';
 
 const endpoint = {
   cards: '/cards',
 };
 
-function* loadPokemons({ payload: {} }) {
-  const params = {};
+function* loadPokemons({payload: {query}}) {
+  const params = {...query};
   const options = {
     method: 'GET',
     headers: {
@@ -26,7 +21,7 @@ function* loadPokemons({ payload: {} }) {
   };
   const requestURL = `${baseUrl}${endpoint.cards}?${objectToParams(params)}`;
   try {
-    const { data } = yield call(request, requestURL, options);
+    const {data} = yield call(request, requestURL, options);
     yield put(loadPokemonsSuccess(data));
   } catch (error) {
     yield put(loadPokemonsFailed(error.errors));
