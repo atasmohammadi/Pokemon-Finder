@@ -10,6 +10,8 @@ A mobile application built using React Native taking advantage of [Pokemon API](
 - Search bar allowing to search based on name or type of pokemon
 - List ordered by HP (desc)
 - Caching results and Offline capability
+- Redux, Redux Persist, Redux Saga, Reselect, Immer, Invariant
+- React Native Vector Icons, React Native Elements
 
 ## Requirements
 
